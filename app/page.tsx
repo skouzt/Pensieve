@@ -1,65 +1,150 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import { createClient } from "@/utils/supabase/client";
+
+const supabase = createClient();
+
+
+export default function LandingPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+
+    try {
+      const { error: dbError } = await supabase
+        .from("leads")
+        .insert([{ name: name.trim(), email: email.trim() }]);
+
+      if (dbError) {
+        if (dbError.code === "23505") {
+          setError("This email is already on the list.");
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="relative min-h-screen w-full overflow-hidden">
+      {/* Background video */}
+      <video
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+      >
+        <source src="/anime-field.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
+
+      {/* Content */}
+      <section className="relative z-10 flex min-h-screen items-end justify-center px-4 pb-8 pt-6 sm:items-center sm:px-6 sm:py-10">
+        <div className="glass-card mx-auto w-full max-w-[22rem] rounded-2xl p-5 text-white sm:max-w-lg sm:rounded-3xl sm:p-10">
+          {submitted ? (
+            <div className="py-6 text-center">
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30">
+                <svg
+                  className="h-7 w-7 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+
+              <h2 className="font-display text-2xl tracking-tight sm:text-3xl">
+                You're on the list
+              </h2>
+
+              <p className="mt-3 text-xs font-light text-white/75 sm:text-base">
+                Thanks, {name.split(" ")[0]}. We'll reach out at{" "}
+                <span className="text-white">{email}</span> when early access opens.
+              </p>
+            </div>
+          ) : (
+            <>
+              <h1 className="font-display text-center text-3xl tracking-tight sm:text-5xl">
+                Lumos AI
+              </h1>
+
+              <p className="mx-auto mt-2 max-w-md text-center text-[13px] font-light leading-relaxed text-white/80 sm:mt-4 sm:text-base">
+                Your personal AI creation studio. Bring your own API keys. Generate images and
+                videos with ready-made templates. One-time purchase, no subscriptions.
+              </p>
+
+              <form
+                onSubmit={handleSubmit}
+                className="mt-5 flex flex-col gap-2.5 sm:mt-8 sm:gap-3"
+              >
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your name"
+                  autoComplete="name"
+                  disabled={submitting}
+                  className="glass-input w-full rounded-lg px-3.5 py-2.5 text-sm text-white sm:rounded-xl sm:px-4 sm:py-3 sm:text-base disabled:opacity-50"
+                />
+
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  autoComplete="email"
+                  disabled={submitting}
+                  className="glass-input w-full rounded-lg px-3.5 py-2.5 text-sm text-white sm:rounded-xl sm:px-4 sm:py-3 sm:text-base disabled:opacity-50"
+                />
+
+                {error && (
+                  <p className="text-center text-xs text-red-200/90 sm:text-sm">
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="glow-button mt-1 w-full rounded-lg px-5 py-2.5 text-sm font-medium tracking-wide sm:mt-2 sm:rounded-xl sm:px-6 sm:py-3 sm:text-base disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {submitting ? "Saving…" : "Get Early Access"}
+                </button>
+              </form>
+
+              <p className="mt-3 text-center text-[11px] font-light text-white/50 sm:mt-5 sm:text-xs">
+                No spam. We'll only email you when Lumos is ready.
+              </p>
+            </>
+          )}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
