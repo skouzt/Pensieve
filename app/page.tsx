@@ -172,10 +172,10 @@ export default function LandingPage() {
                 </svg>
               </div>
               <h2 className="font-display text-2xl tracking-tight sm:text-3xl">
-                You're in, {name.split(" ")[0]}
+                You&apos;re in, {name.split(" ")[0]}
               </h2>
               <p className="mt-3 text-xs font-light text-white/75 sm:text-sm">
-                Your spot is saved. We'll send your early access invite to{" "}
+                Your spot is saved. We&apos;ll send your early access invite to{" "}
                 <span className="text-white">{email}</span> the moment doors open.
               </p>
             </div>
@@ -232,7 +232,7 @@ export default function LandingPage() {
               </form>
 
               <p className="mt-3 text-center text-[11px] font-light text-white/50 sm:mt-5 sm:text-xs">
-                No spam · No subscriptions · Cancel anytime, there's nothing to cancel
+                No spam · No subscriptions · Cancel anytime, there&apos;s nothing to cancel
               </p>
             </>
           )}
