@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Imavi",
-  description: "Privacy policy for Imavi.",
+  title: "Privacy Policy | iMavi",
+  description: "Privacy policy for iMavi.",
 };
 
-const lastUpdated = "June 27, 2026";
+const lastUpdated = "September 19, 2026";
 
 const sectionClassName = "space-y-4 border-t border-zinc-200 pt-8";
 const headingClassName = "text-2xl font-semibold text-zinc-950";
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           href="/"
           className="inline-flex text-sm font-medium text-teal-700 transition hover:text-teal-900"
         >
-          Back to Imavi
+          Back to iMavi
         </Link>
 
         <header className="mt-10 space-y-5 pb-10">
@@ -29,17 +29,17 @@ export default function PrivacyPolicyPage() {
             Last updated: {lastUpdated}
           </p>
           <h1 className="text-5xl font-semibold leading-none text-zinc-950 sm:text-6xl">
-            Privacy Policy for Imavi
+            Privacy Policy for iMavi
           </h1>
           <p className="max-w-2xl leading-7 text-zinc-700">
-            Imavi (&quot;the App,&quot; &quot;we,&quot; &quot;us&quot;) is a
+            iMavi (&quot;the App,&quot; &quot;we,&quot; &quot;us&quot;) is a
             mobile application that lets you create AI-generated images and
             videos using your own API keys from third-party AI providers. This
             Privacy Policy explains what data the App handles, how it is stored,
             and your rights.
           </p>
           <p className="max-w-2xl leading-7 text-zinc-700">
-            We built Imavi around a simple principle:{" "}
+            We built iMavi around a simple principle:{" "}
             <strong className="font-semibold text-zinc-950">
               your data stays on your device.
             </strong>{" "}
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
               1. Information We Do Not Collect
             </h2>
             <p className={paragraphClassName}>
-              Imavi does not require an account. We do not collect, store, or
+              iMavi does not require an account. We do not collect, store, or
               have access to:
             </p>
             <ul className={listClassName}>
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
             <p className={paragraphClassName}>
-              There is no Imavi server that your creative content passes
+              There is no iMavi server that your creative content passes
               through. When you generate content, your device communicates
               directly with the third-party AI provider you have connected.
             </p>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
               2. API Keys - How They Are Stored
             </h2>
             <p className={paragraphClassName}>
-              Imavi uses a &quot;Bring Your Own Key&quot; (BYOK) model.
+              iMavi uses a &quot;Bring Your Own Key&quot; (BYOK) model.
             </p>
             <ul className={listClassName}>
               <li>
@@ -87,8 +87,8 @@ export default function PrivacyPolicyPage() {
                 locally on your device only, using secure on-device storage.
               </li>
               <li>
-                Your keys are never transmitted to Imavi&apos;s servers, because
-                Imavi does not operate a server that handles your keys.
+                Your keys are never transmitted to iMavi&apos;s servers, because
+                iMavi does not operate a server that handles your keys.
               </li>
               <li>
                 Your keys are sent only to the specific provider&apos;s API when
@@ -115,8 +115,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className={listClassName}>
               <li>
-                Imavi does not see, log, or store this data. It is not routed
-                through any Imavi server.
+                iMavi does not see, log, or store this data. It is not routed
+                through any iMavi server.
               </li>
               <li>
                 Each provider has its own privacy policy and terms governing how
@@ -124,7 +124,7 @@ export default function PrivacyPolicyPage() {
                 the privacy policy of any provider you connect.
               </li>
               <li>
-                Imavi is not responsible for how third-party providers handle,
+                iMavi is not responsible for how third-party providers handle,
                 store, or use your data once it reaches their servers.
               </li>
             </ul>
@@ -133,8 +133,8 @@ export default function PrivacyPolicyPage() {
           <section className={sectionClassName}>
             <h2 className={headingClassName}>4. Payment Information</h2>
             <p className={paragraphClassName}>
-              If you purchase Imavi, payment is processed entirely through the
-              Apple App Store or Google Play Store, as applicable. Imavi does
+              If you purchase iMavi, payment is processed entirely through the
+              Apple App Store or Google Play Store, as applicable. iMavi does
               not receive, see, or store your payment details, such as card
               numbers or billing address. This is handled directly by Apple or
               Google under their own privacy policies.
@@ -144,7 +144,7 @@ export default function PrivacyPolicyPage() {
           <section className={sectionClassName}>
             <h2 className={headingClassName}>5. Analytics and Crash Reporting</h2>
             <p className={paragraphClassName}>
-              Imavi does not currently use any analytics or crash-reporting
+              iMavi does not currently use any analytics or crash-reporting
               tools. If this changes in a future update, this Privacy Policy
               will be updated accordingly before the change takes effect.
             </p>
@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
           <section className={sectionClassName}>
             <h2 className={headingClassName}>7. Children&apos;s Privacy</h2>
             <p className={paragraphClassName}>
-              Imavi is not directed at children under 13, or the relevant
+              iMavi is not directed at children under 13, or the relevant
               minimum age in your country, and we do not knowingly collect
               personal information from children. Some third-party AI providers
               may have their own age restrictions. Please review their terms.
@@ -183,8 +183,8 @@ export default function PrivacyPolicyPage() {
           <section className={sectionClassName}>
             <h2 className={headingClassName}>8. Your Rights</h2>
             <p className={paragraphClassName}>
-              Because Imavi does not collect personal data on its own servers,
-              there is no Imavi-held data to request, export, or delete. Any
+              Because iMavi does not collect personal data on its own servers,
+              there is no iMavi-held data to request, export, or delete. Any
               data-subject rights, such as access, deletion, or correction,
               regarding content you have generated would need to be directed to
               the third-party AI provider whose servers processed that request.
@@ -199,7 +199,7 @@ export default function PrivacyPolicyPage() {
           <section className={sectionClassName}>
             <h2 className={headingClassName}>9. Changes to This Policy</h2>
             <p className={paragraphClassName}>
-              We may update this Privacy Policy as Imavi adds new features, for
+              We may update this Privacy Policy as iMavi adds new features, for
               example if we introduce optional cloud sync or analytics in the
               future. We will update the &quot;Last updated&quot; date above and,
               for material changes, notify users within the App.
@@ -211,14 +211,14 @@ export default function PrivacyPolicyPage() {
             <p className={paragraphClassName}>
               If you have questions about this Privacy Policy, please use the
               support contact listed in the App Store or Google Play listing for
-              Imavi.
+              iMavi.
             </p>
           </section>
         </div>
 
         <footer className="mt-12 border-t border-zinc-200 pt-8 text-sm leading-6 text-zinc-500">
-          This policy describes Imavi&apos;s current data practices as of{" "}
-          {lastUpdated}. Because Imavi is under active development, please check
+          This policy describes iMavi&apos;s current data practices as of{" "}
+          {lastUpdated}. Because iMavi is under active development, please check
           back periodically for updates.
         </footer>
       </article>
