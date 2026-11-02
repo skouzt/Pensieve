@@ -188,9 +188,9 @@ export default function LandingPage() {
                 AI Creation Studio · In Your Pocket
               </p>
               <p className="mx-auto mt-3 max-w-md text-center text-[13px] font-light leading-relaxed text-white/80 sm:mt-4 sm:text-base">
-                Studio-grade AI images and video, made on your phone. Plug in
-                your own API keys, choose a template, and create in seconds —
-                no subscriptions, no limits. Pay once, keep every update forever.
+                Studio-grade AI images and video, made on your phone. Choose a
+                model or a template and create in seconds — no subscriptions,
+                no API keys. Top up your wallet and pay only for what you make.
               </p>
 
               <form
