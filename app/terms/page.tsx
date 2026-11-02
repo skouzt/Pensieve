@@ -3,11 +3,10 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service | iMavi",
-  description:
-    "Terms of Service for iMavi, the bring-your-own-key AI image and video studio.",
+  description: "Terms of Service for iMavi, the AI image and video studio.",
 };
 
-const lastUpdated = "September 19, 2026";
+const lastUpdated = "November 3, 2026";
 
 const sectionClassName = "space-y-4 border-t border-zinc-200 pt-8";
 const headingClassName = "text-2xl font-semibold text-zinc-950";
@@ -35,12 +34,13 @@ export default function TermsPage() {
           <p className="max-w-2xl leading-7 text-zinc-700">
             These Terms of Service (&quot;Terms&quot;) govern your use of iMavi
             (&quot;the App,&quot; &quot;we,&quot; &quot;us&quot;), a mobile
-            application that lets you create AI-generated images and videos using
-            your own API keys from third-party AI providers.
+            application that lets you create AI-generated images and videos,
+            paid for from an in-app wallet.
           </p>
           <p className="max-w-2xl leading-7 text-zinc-700">
-            By downloading, installing, or using the App, you agree to these
-            Terms. If you do not agree, do not use the App.
+            By creating an account or using the App, you agree to these Terms.
+            If you do not agree, do not use the App. You must be at least 18
+            years old to use iMavi.
           </p>
         </header>
 
@@ -68,8 +68,9 @@ export default function TermsPage() {
                 Remove or obscure any proprietary notices contained in the App
               </li>
               <li>
-                Use the App to build a competing product, or to circumvent a
-                third-party provider&apos;s own terms or rate limits
+                Use automated means to access the App or our servers, create
+                multiple accounts to claim free credit, or otherwise get around
+                our limits, pricing, or security
               </li>
             </ul>
             <p className={paragraphClassName}>
@@ -80,11 +81,21 @@ export default function TermsPage() {
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>2. Acceptable Use</h2>
+            <h2 className={headingClassName}>2. Your Account</h2>
             <p className={paragraphClassName}>
-              You are solely responsible for the prompts you write and the
-              content you generate. You agree not to use iMavi to create,
-              upload, or distribute content that:
+              You sign in with Google or with a one-time code sent to your
+              email. You are responsible for activity on your account and for
+              keeping access to your email or Google account secure. One person
+              may hold one account.
+            </p>
+          </section>
+
+          <section className={sectionClassName}>
+            <h2 className={headingClassName}>3. Acceptable Use</h2>
+            <p className={paragraphClassName}>
+              You are solely responsible for the prompts you write, the images
+              you upload, and the content you generate. You agree not to use
+              iMavi to create, upload, or distribute content that:
             </p>
             <ul className={listClassName}>
               <li>
@@ -103,7 +114,8 @@ export default function TermsPage() {
               <li>
                 Depicts, or could reasonably be understood to depict, a minor in
                 any sexual, abusive, or exploitative context. This is an
-                absolute prohibition with no exceptions.
+                absolute prohibition with no exceptions, and we report it to
+                the authorities.
               </li>
               <li>
                 Harasses, defames, threatens, or incites violence or hatred
@@ -120,31 +132,37 @@ export default function TermsPage() {
               </li>
             </ul>
             <p className={paragraphClassName}>
-              Because generations run directly between your device and your
-              chosen provider, we do not pre-screen or moderate your content.
-              That does not make it permitted. You remain responsible for it,
-              and your provider may independently enforce its own content
-              policies against your account.
+              We check prompts and uploaded images automatically and may block
+              a request that appears to break these rules. Blocked requests are
+              not charged. Our checks are not perfect, and a request that gets
+              through is not thereby permitted. You can report content from
+              inside the App.
             </p>
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>3. Ownership of Your Output</h2>
+            <h2 className={headingClassName}>4. Ownership of Your Output</h2>
             <p className={paragraphClassName}>
               As between you and us, you own the images and videos you generate
-              with iMavi. We claim no licence or ownership over your prompts or
-              your output, and we cannot access them in any case, because
-              generations never pass through our servers.
+              with iMavi. We claim no ownership over your prompts or your
+              output. You give us only the limited permission needed to process
+              and store them to provide the App, to moderate content, and to
+              handle reports, as described in our{" "}
+              <Link
+                href="/privacy-policy"
+                className="font-medium text-teal-700 transition hover:text-teal-900"
+              >
+                Privacy Policy
+              </Link>
+              .
             </p>
             <p className={paragraphClassName}>
               Two important limits apply, and neither is within our control:
             </p>
             <ul className={listClassName}>
               <li>
-                Your rights in generated output are also governed by the terms
-                of the third-party AI provider that produced it. Some providers
-                restrict commercial use, or make different ownership claims
-                depending on your plan.
+                Your use of generated output is also subject to the terms of
+                the AI model provider that produced it.
               </li>
               <li>
                 The copyright status of purely AI-generated material is
@@ -153,69 +171,84 @@ export default function TermsPage() {
                 copyright, or that you can register or enforce rights in it.
               </li>
             </ul>
+            <p className={paragraphClassName}>
+              Generated media is kept on our servers only briefly. Save
+              anything you want to keep to your device.
+            </p>
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>
-              4. Third-Party AI Providers
-            </h2>
-            <p className={paragraphClassName}>
-              iMavi uses a &quot;Bring Your Own Key&quot; model. You connect
-              your own accounts with providers such as OpenAI, Google, Stability
-              AI, Black Forest Labs, Kling, Runway, or Luma, and the App sends
-              your requests directly from your device to those providers.
-            </p>
+            <h2 className={headingClassName}>5. Wallet and Pricing</h2>
             <ul className={listClassName}>
               <li>
-                Your use of each provider is governed by that provider&apos;s
-                own terms of service, acceptable-use policy, and privacy policy.
-                Those terms pass through to you directly, and you are bound by
-                them.
+                You add credit to your iMavi wallet by buying a top-up through
+                Google Play. Wallet balances are held in US dollars; prices may
+                be shown in your local currency for convenience.
               </li>
               <li>
-                You are responsible for all charges your providers bill to your
-                accounts for generations you run through iMavi. We do not
-                receive, control, or refund those charges.
+                Each generation shows its price before you start it. When you
+                start it, that exact amount is charged to your wallet. If the
+                price changes before you start, the App shows you the new price
+                first.
               </li>
               <li>
-                Providers may change pricing, models, rate limits, or
-                availability, or suspend your account, at any time. A provider
-                becoming unavailable or removing a model is not a defect in the
-                App.
+                If a generation fails, is blocked, or does not complete, the
+                amount charged for it is returned to your wallet automatically.
               </li>
               <li>
-                You are responsible for keeping your API keys secure and for any
-                activity carried out with them.
+                New accounts may receive a small number of free images. Free
+                images are limited to one grant per person and per device.
+              </li>
+              <li>
+                Wallet credit is not money. It does not expire, but it can only
+                be used for generations in iMavi. It cannot be withdrawn,
+                transferred, or exchanged for cash, and it is not refundable
+                except as described in Section 6.
+              </li>
+              <li>
+                We may change prices, add or remove models, and change the
+                available options at any time. Changes never affect a
+                generation you have already started.
               </li>
             </ul>
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>5. Payment and Refunds</h2>
+            <h2 className={headingClassName}>6. Payment and Refunds</h2>
             <p className={paragraphClassName}>
-              Any purchase of iMavi, or of a paid feature within it, is
-              processed entirely by the Apple App Store or Google Play Store. We
-              do not receive or store your payment details.
+              Top-ups are processed entirely by Google Play. We do not receive
+              or store your card or billing details.
             </p>
             <ul className={listClassName}>
               <li>
-                Refunds are handled under the policies of the store you
-                purchased through, and requests must be made to Apple or Google,
-                not to us.
+                Refund requests for a top-up are handled by Google Play under
+                its refund policy. If a top-up is refunded or charged back, the
+                same amount is removed from your wallet, which may leave it
+                with a negative balance that future top-ups will cover first.
               </li>
               <li>
-                Amounts you pay your AI providers are entirely separate from
-                anything you pay for the App, and are never refundable by us.
+                Credit already spent on completed generations is not
+                refundable.
               </li>
               <li>
-                Where a store&apos;s own rules or applicable consumer law give
-                you a refund right, that right is not limited by this section.
+                If you believe you were charged incorrectly, contact us at{" "}
+                <a
+                  href="mailto:hello@imavi.in"
+                  className="font-medium text-teal-700 transition hover:text-teal-900"
+                >
+                  hello@imavi.in
+                </a>{" "}
+                and we will review it.
+              </li>
+              <li>
+                Where applicable consumer law gives you a refund right, that
+                right is not limited by this section.
               </li>
             </ul>
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>6. Disclaimer of Warranties</h2>
+            <h2 className={headingClassName}>7. Disclaimer of Warranties</h2>
             <p className={paragraphClassName}>
               The App is provided &quot;as is&quot; and &quot;as
               available,&quot; without warranties of any kind, whether express,
@@ -225,16 +258,16 @@ export default function TermsPage() {
             </p>
             <p className={paragraphClassName}>
               We do not warrant that the App will be uninterrupted or
-              error-free, that any particular model or provider will remain
-              available, or that generated output will be accurate, appropriate,
-              original, or fit for any purpose. AI models can produce
-              inaccurate, biased, or unexpected results. Review output before
-              you rely on it or publish it.
+              error-free, that any particular model will remain available, or
+              that generated output will be accurate, appropriate, original, or
+              fit for any purpose. AI models can produce inaccurate, biased, or
+              unexpected results. Review output before you rely on it or
+              publish it.
             </p>
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>7. Limitation of Liability</h2>
+            <h2 className={headingClassName}>8. Limitation of Liability</h2>
             <p className={paragraphClassName}>
               To the fullest extent permitted by law, we will not be liable for
               any indirect, incidental, special, consequential, or exemplary
@@ -242,14 +275,14 @@ export default function TermsPage() {
               arising out of or relating to your use of the App.
             </p>
             <p className={paragraphClassName}>
-              This expressly includes charges billed to you by a third-party AI
-              provider, loss of generated content stored only on your device,
-              and any consequence of content you chose to generate or publish.
+              This expressly includes loss of generated content you did not
+              save to your device, and any consequence of content you chose to
+              generate or publish.
             </p>
             <p className={paragraphClassName}>
               Our total aggregate liability for all claims relating to the App
-              will not exceed the greater of the amount you actually paid us for
-              the App in the twelve months before the claim arose, or ₹1,000.
+              will not exceed the greater of the amount you paid us in the
+              twelve months before the claim arose, or ₹1,000.
             </p>
             <p className={paragraphClassName}>
               Nothing in these Terms excludes or limits liability that cannot be
@@ -259,26 +292,32 @@ export default function TermsPage() {
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>8. Termination</h2>
+            <h2 className={headingClassName}>9. Suspension and Termination</h2>
             <p className={paragraphClassName}>
-              You may stop using iMavi at any time by uninstalling it. Doing so
-              permanently removes your locally stored API keys and any content
-              held only in the App.
+              You may stop using iMavi at any time, and you can delete your
+              account in the App under Settings → Delete account. Deleting your
+              account permanently removes it, and{" "}
+              <strong className="font-semibold text-zinc-950">
+                any remaining wallet balance is forfeited and cannot be
+                restored or refunded.
+              </strong>
             </p>
             <p className={paragraphClassName}>
-              We may suspend or terminate your licence to use the App if you
-              materially breach these Terms, in particular the acceptable-use
-              rules in Section 2, or where we are required to do so by law or by
-              an app store.
+              We may suspend or close your account if you materially breach
+              these Terms, in particular the acceptable-use rules in Section 3,
+              if we reasonably suspect fraud or abuse of payments or free
+              credit, or where we are required to by law or by Google Play. If
+              we close your account without any breach on your part, we will
+              refund your unused wallet balance.
             </p>
             <p className={paragraphClassName}>
-              Sections 3, 6, 7, 9, and 10 survive termination.
+              Sections 4, 7, 8, 10, and 11 survive termination.
             </p>
           </section>
 
           <section className={sectionClassName}>
             <h2 className={headingClassName}>
-              9. Governing Law and Jurisdiction
+              10. Governing Law and Jurisdiction
             </h2>
             <p className={paragraphClassName}>
               These Terms are governed by the laws of India, without regard to
@@ -294,11 +333,11 @@ export default function TermsPage() {
           </section>
 
           <section className={sectionClassName}>
-            <h2 className={headingClassName}>10. Changes and Contact</h2>
+            <h2 className={headingClassName}>11. Changes and Contact</h2>
             <p className={paragraphClassName}>
-              We may update these Terms as iMavi adds features. We will update
-              the &quot;Last updated&quot; date above and, for material changes,
-              notify users within the App. Continuing to use the App after a
+              We may update these Terms as iMavi changes. We will update the
+              &quot;Last updated&quot; date above and, for material changes,
+              notify you within the App. Continuing to use the App after a
               change takes effect means you accept the revised Terms.
             </p>
             <p className={paragraphClassName}>
@@ -321,7 +360,7 @@ export default function TermsPage() {
                 href="/data-deletion"
                 className="font-medium text-teal-700 transition hover:text-teal-900"
               >
-                Data Deletion Request
+                Data Deletion
               </Link>{" "}
               pages.
             </p>
