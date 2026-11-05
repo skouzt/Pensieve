@@ -14,26 +14,27 @@ const HERO = [
   { id: "3020", prompt: "A fluffy white puppy among presents on Christmas morning" },
 ];
 
-// Real results from the app, with the prompts that made them.
+// Real results from the app, with the prompts that made them. Every image and clip on the page
+// is used once: the hero, the cards, the marquee and this gallery never share one.
 const GALLERY: { id: string; w: number; h: number; prompt: string; video?: boolean }[] = [
-  { id: "3059", w: 540, h: 968, video: true, prompt: "Ginger cat riding a surfboard through a breaking wave, GoPro angle" },
+  { id: "3081", w: 540, h: 968, video: true, prompt: "Anime boy running with a keyboard through a neon city street" },
   { id: "3013", w: 540, h: 968, prompt: "Macro beauty shot of glossy lips with diamond letter grillz" },
-  { id: "3027", w: 540, h: 540, prompt: "Woman in white lace kissing a pink dolphin in turquoise water" },
-  { id: "3081", w: 540, h: 968, prompt: "Anime boy running with a keyboard through a neon city street" },
-  { id: "3047", w: 540, h: 968, video: true, prompt: "Hamster in a helmet riding a tiny motorcycle down a redwood road" },
+  { id: "3050", w: 540, h: 540, prompt: "Cat in a straw cowboy hat floating in a turquoise pool" },
+  { id: "3070", w: 540, h: 810, prompt: "Woman by a black sports car at night in the woods, flash photo" },
+  { id: "3108", w: 540, h: 968, video: true, prompt: "White horse galloping beside a green supercar through a desert canyon" },
   { id: "3105", w: 540, h: 540, prompt: "A single wooden chair burning in an empty desert at night" },
-  { id: "3108", w: 540, h: 968, prompt: "White horse galloping beside a green supercar through a canyon" },
+  { id: "3049", w: 540, h: 968, prompt: "Two models in matching logo tees against a mauve backdrop" },
   { id: "3106", w: 540, h: 540, prompt: "Woman lounging in a shopping cart full of cash on a tennis court" },
-  { id: "3064", w: 540, h: 968, video: true, prompt: "Woman on a swing above a giant daisy, surreal cinematic still" },
+  { id: "3074", w: 540, h: 715, prompt: "Skincare tube held near a freckled face, soft window light" },
+  { id: "3192", w: 540, h: 968, video: true, prompt: "Giant pink teddy bear lying on a rainy New York street" },
+  { id: "3041", w: 540, h: 540, prompt: "Extreme close-up of dewy glass skin, soft beauty light" },
   { id: "3075", w: 540, h: 810, prompt: "Man in a crystal-encrusted suit and visor, fashion portrait" },
-  { id: "3192", w: 540, h: 968, prompt: "Giant pink teddy bear lying on a rainy New York street" },
-  { id: "3125", w: 540, h: 968, prompt: "Rider in bunny ears on a motorcycle across a night bridge" },
-  { id: "3020", w: 540, h: 968, video: true, prompt: "A fluffy dog among opened presents beside a Christmas tree" },
+  { id: "3051", w: 540, h: 540, prompt: "Old sedan on fire outside a suburban house at dusk, 35mm film" },
   { id: "3129", w: 540, h: 968, prompt: "POV of a wooden roller coaster dropping into a sunset sky" },
 ];
 
-const MARQUEE_A = ["3013", "3081", "3108", "3027", "3192", "3075", "3105"];
-const MARQUEE_B = ["3129", "3106", "3125", "3059", "3064", "3047", "3020"];
+const MARQUEE_A = ["w78", "w421", "w45", "w223", "w110", "w31", "w26", "w287"];
+const MARQUEE_B = ["w486", "w299", "w115", "w322", "w24", "w69", "w298", "w191"];
 
 function PlayIcon({ size = 22 }: { size?: number }) {
   return (
@@ -269,7 +270,7 @@ export default function LandingPage() {
               <span className="num">VIDEO</span>
               <h3>Type. Wait. Watch.</h3>
               <div className="visual">
-                <InViewVideo id="3047" w={540} h={968} />
+                <InViewVideo id="3102" w={540} h={968} />
               </div>
             </article>
             <article className="card mint" data-reveal style={{ "--d": "0.18s" } as React.CSSProperties}>
